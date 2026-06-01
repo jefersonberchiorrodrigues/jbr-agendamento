@@ -14,71 +14,52 @@
     --bg:#0a0a0a;--surface:#111;--border:#1e1e1e;--border2:#2a2a2a;
     --text:#f0f0f0;--muted:#666;--muted2:#444;
     --accent:#e8ff47;--accent-dim:rgba(232,255,71,0.08);--accent-border:rgba(232,255,71,0.2);
-    --green:#2ecc71;--red:#ff4757;
+    --green:#2ecc71;
   }
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;min-height:100vh;overflow-x:hidden}
-
-  /* GRID BG */
   body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
-
   .glow{position:fixed;top:-300px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(232,255,71,0.05) 0%,transparent 70%);pointer-events:none;z-index:0}
-
   .wrap{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:60px 24px 80px}
-
-  /* NAV */
   nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:64px}
   .logo{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;letter-spacing:0.04em}
   .logo span{color:var(--accent)}
   .badge{font-size:11px;color:var(--muted);border:1px solid var(--border2);padding:4px 12px;border-radius:20px}
-
-  /* HERO */
+  .badge-ia{display:inline-flex;align-items:center;gap:8px;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:24px}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
   .eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--accent)}
-
   h1{font-family:'Montserrat',sans-serif;font-size:clamp(38px,8vw,64px);font-weight:800;line-height:1.0;letter-spacing:-0.02em;margin-bottom:20px}
   h1 em{font-style:normal;color:var(--accent)}
-
   .lead{font-size:15px;color:#999;line-height:1.8;font-weight:300;margin-bottom:40px}
   .lead strong{color:#ccc;font-weight:500}
-
-  /* STEPS */
   .steps-row{display:flex;gap:0;margin-bottom:48px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
   .step-item{flex:1;padding:16px 20px;border-right:1px solid var(--border);text-align:center}
   .step-item:last-child{border-right:none}
   .step-n{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--accent);margin-bottom:4px}
   .step-t{font-size:12px;color:var(--muted);line-height:1.4}
-
-  /* CARD / FORM */
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;margin-bottom:20px}
-  .card-title{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px}
-  .card-sub{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.6}
-
-  .field{margin-bottom:14px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:20px}
+  .card-title{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px}
+  .card-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+  .field{margin-bottom:18px}
   .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px;letter-spacing:0.03em}
-  .field input,.field select,.field textarea{width:100%;padding:12px 14px;background:#0d0d0d;border:1px solid var(--border2);border-radius:6px;color:var(--text);font-size:14px;font-family:'Poppins',sans-serif;outline:none;transition:border-color 0.2s}
-  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}
-  .field input::placeholder,.field textarea::placeholder{color:var(--muted2)}
-  .field select{appearance:none;cursor:pointer}
-  .field select option{background:#111}
-  .field textarea{resize:vertical;min-height:80px}
-
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-
-  /* BUTTONS */
+  .field input{width:100%;padding:12px 14px;background:#0d0d0d;border:1px solid var(--border2);border-radius:6px;color:var(--text);font-size:14px;font-family:'Poppins',sans-serif;outline:none;transition:border-color 0.2s}
+  .field input:focus{border-color:var(--accent)}
+  .field input::placeholder{color:var(--muted2)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+  .chip-label{font-size:12px;color:var(--muted);margin-bottom:8px;display:block;letter-spacing:0.03em}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .chip{padding:8px 16px;border:1px solid var(--border2);border-radius:20px;font-size:13px;color:var(--muted);cursor:pointer;transition:all 0.15s;font-family:'Poppins',sans-serif;background:none;user-select:none}
+  .chip:hover{border-color:#444;color:var(--text)}
+  .chip.on{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
   .btn{width:100%;padding:15px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;border:none;border-radius:6px;cursor:pointer;transition:opacity 0.2s,transform 0.15s;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:8px}
   .btn:hover{opacity:0.88;transform:translateY(-1px)}
   .btn-primary{background:var(--accent);color:#0a0a0a}
-  .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border2)}
   .btn:disabled{opacity:0.4;cursor:not-allowed;transform:none}
-
-  /* CALENDAR */
   .calendar-wrap{display:none}
   .cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
   .cal-month{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700}
   .cal-btn{background:none;border:1px solid var(--border2);color:var(--text);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:16px;transition:border-color 0.2s}
   .cal-btn:hover{border-color:var(--accent)}
-
   .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:20px}
   .cal-head{font-size:11px;color:var(--muted);text-align:center;padding:6px 0;font-weight:500}
   .cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:6px;font-size:13px;cursor:pointer;border:1px solid transparent;transition:all 0.15s}
@@ -87,31 +68,23 @@
   .cal-day.empty{cursor:default}
   .cal-day.selected{background:var(--accent);color:#0a0a0a;font-weight:700;border-color:var(--accent)}
   .cal-day.today{border-color:var(--border2)}
-
   .slots-title{font-size:13px;color:var(--muted);margin-bottom:12px}
-  .slots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
-  .slot{padding:10px;border:1px solid var(--border2);border-radius:6px;text-align:center;font-size:13px;cursor:pointer;transition:all 0.15s}
+  .slots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}
+  .slot{padding:12px;border:1px solid var(--border2);border-radius:6px;text-align:center;font-size:14px;cursor:pointer;transition:all 0.15s;font-weight:500}
   .slot:hover{border-color:var(--accent);color:var(--accent)}
-  .slot.selected{background:var(--accent);color:#0a0a0a;font-weight:600;border-color:var(--accent)}
+  .slot.selected{background:var(--accent);color:#0a0a0a;font-weight:700;border-color:var(--accent)}
   .slot-loading{text-align:center;color:var(--muted);font-size:13px;padding:20px 0}
-
-  /* SUCCESS */
   .success-card{display:none;text-align:center;padding:48px 32px}
   .success-icon{font-size:52px;margin-bottom:16px}
   .success-card h2{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:800;margin-bottom:8px}
   .success-card p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:28px}
-
-  /* WHATSAPP */
   .wa-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:10px;padding:20px 24px;display:flex;align-items:center;gap:16px;margin-top:20px}
   .wa-icon{font-size:28px;flex-shrink:0}
   .wa-text p:first-child{font-size:13px;font-weight:500;color:#ccc;margin-bottom:2px}
   .wa-text p:last-child{font-size:12px;color:var(--muted)}
   .wa-btn{margin-left:auto;padding:9px 18px;background:rgba(37,211,102,0.15);color:#25d366;border:1px solid rgba(37,211,102,0.3);border-radius:6px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block;transition:all 0.2s}
   .wa-btn:hover{background:rgba(37,211,102,0.25)}
-
-  /* FOOTER */
   footer{text-align:center;margin-top:48px;font-size:12px;color:var(--muted2)}
-
   @media(max-width:500px){
     .steps-row{flex-direction:column}
     .step-item{border-right:none;border-bottom:1px solid var(--border)}
@@ -126,21 +99,18 @@
 <body>
 <div class="glow"></div>
 <div class="wrap">
-
   <nav>
     <div class="logo">JBR <span>Automações</span></div>
     <div class="badge">Itapema · SC</div>
   </nav>
 
-  <!-- HERO -->
+  <div class="badge-ia">⚡ Powered by Artificial Intelligence</div>
   <div class="eyebrow">Agende uma conversa</div>
-  <h1>Vamos <em>automatizar</em><br>sua empresa</h1>
+  <h1>Automatize sua empresa<br>com <em>Inteligência<br>Artificial</em></h1>
   <p class="lead">
-    Implemento sistemas com IA para empresas que faturam entre <strong>50k e 100k/mês</strong>.<br>
-    Preencha o formulário e escolha um horário — é grátis e sem compromisso.
+    Identifico as tarefas que travam seu crescimento e implemento sistemas de IA que trabalham por você — <strong>24h por dia, sem contratar ninguém.</strong>
   </p>
 
-  <!-- STEPS -->
   <div class="steps-row">
     <div class="step-item"><div class="step-n">01</div><div class="step-t">Preencha o formulário</div></div>
     <div class="step-item"><div class="step-n">02</div><div class="step-t">Escolha um horário</div></div>
@@ -150,50 +120,57 @@
   <!-- FORM -->
   <div class="card" id="form-card">
     <div class="card-title">Sobre você e sua empresa</div>
-    <div class="card-sub">Leva menos de 2 minutos. Suas informações ficam só comigo.</div>
+    <div class="card-sub">Leva menos de 90 segundos.</div>
 
     <div class="row2">
-      <div class="field"><label>Seu nome</label><input id="nome" type="text" placeholder="Jeferson Rodrigues"></div>
+      <div class="field"><label>Seu nome</label><input id="nome" type="text" placeholder="Seu nome completo"></div>
       <div class="field"><label>WhatsApp (com DDD)</label><input id="whatsapp" type="tel" placeholder="11 9 0000-0000"></div>
     </div>
-    <div class="field"><label>Nome da empresa</label><input id="empresa" type="text" placeholder="Nome da empresa"></div>
-    <div class="field">
-      <label>Faturamento mensal</label>
-      <select id="faturamento">
-        <option value="" disabled selected>Selecione</option>
-        <option>Até R$ 30 mil/mês</option>
-        <option>De R$ 30k a R$ 50k/mês</option>
-        <option>De R$ 50k a R$ 100k/mês</option>
-        <option>Acima de R$ 100k/mês</option>
-      </select>
+
+    <label class="chip-label">Faturamento mensal</label>
+    <div class="chips" id="chips-fat">
+      <div class="chip" data-val="Até R$ 30k">Até R$ 30k</div>
+      <div class="chip" data-val="R$ 30k – 50k">R$ 30k – 50k</div>
+      <div class="chip" data-val="R$ 50k – 100k">R$ 50k – 100k</div>
+      <div class="chip" data-val="Acima de 100k">Acima de 100k</div>
     </div>
-    <div class="field">
-      <label>Principal tarefa manual que te trava</label>
-      <textarea id="dor" placeholder="Ex: minha equipe perde horas exportando relatórios do Meta Ads toda semana..."></textarea>
+
+    <label class="chip-label">Qual área você quer automatizar primeiro?</label>
+    <div class="chips" id="chips-area">
+      <div class="chip" data-val="Relatórios e dados">Relatórios e dados</div>
+      <div class="chip" data-val="Atendimento ao cliente">Atendimento ao cliente</div>
+      <div class="chip" data-val="Marketing e anúncios">Marketing e anúncios</div>
+      <div class="chip" data-val="Financeiro">Financeiro</div>
+      <div class="chip" data-val="Gestão de equipe">Gestão de equipe</div>
+      <div class="chip" data-val="Outro">Outro</div>
+    </div>
+
+    <label class="chip-label">Quantas horas por semana sua equipe perde em tarefas manuais?</label>
+    <div class="chips" id="chips-horas">
+      <div class="chip" data-val="Menos de 5h">Menos de 5h</div>
+      <div class="chip" data-val="5 a 15h">5 a 15h</div>
+      <div class="chip" data-val="15 a 30h">15 a 30h</div>
+      <div class="chip" data-val="Mais de 30h">Mais de 30h</div>
     </div>
 
     <button class="btn btn-primary" onclick="irParaCalendario()">
-      Escolher horário →
+      📅 Escolher horário →
     </button>
   </div>
 
   <!-- CALENDAR -->
   <div class="card calendar-wrap" id="calendar-card">
     <div class="card-title">Escolha um horário</div>
-    <div class="card-sub">Clique em um dia disponível e depois escolha o horário.</div>
-
+    <div class="card-sub">Disponível de segunda a sexta. Clique num dia e escolha o horário.</div>
     <div class="cal-nav">
       <button class="cal-btn" onclick="mudarMes(-1)">‹</button>
       <div class="cal-month" id="cal-month"></div>
       <button class="cal-btn" onclick="mudarMes(1)">›</button>
     </div>
-
     <div class="cal-grid" id="cal-grid"></div>
-
     <div id="slots-area"></div>
-
     <div style="display:flex;gap:10px;margin-top:8px">
-      <button class="btn btn-secondary" onclick="voltarForm()" style="flex:1">← Voltar</button>
+      <button class="btn btn-secondary" onclick="voltarForm()" style="flex:1;background:transparent;border:1px solid var(--border2);color:var(--text)">← Voltar</button>
       <button class="btn btn-primary" id="btn-confirmar" onclick="confirmarAgendamento()" style="flex:2" disabled>Confirmar agendamento</button>
     </div>
   </div>
@@ -202,8 +179,7 @@
   <div class="card success-card" id="success-card">
     <div class="success-icon">✅</div>
     <h2>Agendado!</h2>
-    <p>O evento foi criado no meu Google Agenda.<br>Você vai receber uma confirmação em breve.<br><br>
-    Nos vemos em breve, <span id="success-nome"></span> 👋</p>
+    <p>O evento foi criado no meu Google Agenda.<br>Você vai receber uma confirmação em breve.<br><br>Nos vemos em breve, <span id="success-nome"></span> 👋</p>
   </div>
 
   <!-- WHATSAPP -->
@@ -220,25 +196,35 @@
 </div>
 
 <script>
-// ── ESTADO ──────────────────────────────────────────────
+let faturamento = '';
+let area = '';
+let horas = '';
 let dataSelecionada = null;
 let horarioSelecionado = null;
 let mesAtual = new Date();
 mesAtual.setDate(1);
 
-// ── FORM → CALENDÁRIO ───────────────────────────────────
-function irParaCalendario() {
-  const nome      = document.getElementById('nome').value.trim();
-  const whatsapp  = document.getElementById('whatsapp').value.trim();
-  const empresa   = document.getElementById('empresa').value.trim();
-  const faturamento = document.getElementById('faturamento').value;
-  const dor       = document.getElementById('dor').value.trim();
+// Chips
+document.querySelectorAll('.chips').forEach(group => {
+  group.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      group.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      const id = group.id;
+      if (id === 'chips-fat') faturamento = chip.dataset.val;
+      if (id === 'chips-area') area = chip.dataset.val;
+      if (id === 'chips-horas') horas = chip.dataset.val;
+    });
+  });
+});
 
-  if (!nome || !whatsapp || !empresa || !faturamento || !dor) {
-    alert('Preenche todos os campos para continuar.');
+function irParaCalendario() {
+  const nome = document.getElementById('nome').value.trim();
+  const whatsapp = document.getElementById('whatsapp').value.trim();
+  if (!nome || !whatsapp || !faturamento || !area || !horas) {
+    alert('Preencha todos os campos e selecione todas as opções para continuar.');
     return;
   }
-
   document.getElementById('form-card').style.display = 'none';
   document.getElementById('calendar-card').style.display = 'block';
   renderCalendario();
@@ -250,101 +236,60 @@ function voltarForm() {
   document.getElementById('form-card').style.display = 'block';
 }
 
-// ── CALENDÁRIO ──────────────────────────────────────────
 const DIAS = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
 const MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 
 function renderCalendario() {
-  const hoje = new Date();
-  hoje.setHours(0,0,0,0);
-
-  document.getElementById('cal-month').textContent =
-    MESES[mesAtual.getMonth()] + ' ' + mesAtual.getFullYear();
-
+  const hoje = new Date(); hoje.setHours(0,0,0,0);
+  document.getElementById('cal-month').textContent = MESES[mesAtual.getMonth()] + ' ' + mesAtual.getFullYear();
   const grid = document.getElementById('cal-grid');
   grid.innerHTML = '';
-
-  DIAS.forEach(d => {
-    const h = document.createElement('div');
-    h.className = 'cal-head';
-    h.textContent = d;
-    grid.appendChild(h);
-  });
-
+  DIAS.forEach(d => { const h = document.createElement('div'); h.className = 'cal-head'; h.textContent = d; grid.appendChild(h); });
   const primeiroDia = new Date(mesAtual.getFullYear(), mesAtual.getMonth(), 1).getDay();
-  const diasNoMes   = new Date(mesAtual.getFullYear(), mesAtual.getMonth() + 1, 0).getDate();
-
-  for (let i = 0; i < primeiroDia; i++) {
-    const vazio = document.createElement('div');
-    vazio.className = 'cal-day empty';
-    grid.appendChild(vazio);
-  }
-
+  const diasNoMes = new Date(mesAtual.getFullYear(), mesAtual.getMonth() + 1, 0).getDate();
+  for (let i = 0; i < primeiroDia; i++) { const v = document.createElement('div'); v.className = 'cal-day empty'; grid.appendChild(v); }
   for (let d = 1; d <= diasNoMes; d++) {
     const data = new Date(mesAtual.getFullYear(), mesAtual.getMonth(), d);
-    const dia  = document.createElement('div');
-    dia.className = 'cal-day';
-    dia.textContent = d;
-
+    const dia = document.createElement('div'); dia.className = 'cal-day'; dia.textContent = d;
     const isoStr = data.toISOString().split('T')[0];
     const passado = data < hoje;
     const fimSemana = data.getDay() === 0 || data.getDay() === 6;
-
-    if (passado || fimSemana) {
-      dia.classList.add('disabled');
-    } else {
+    if (passado || fimSemana) { dia.classList.add('disabled'); }
+    else {
       if (data.toDateString() === hoje.toDateString()) dia.classList.add('today');
       if (dataSelecionada === isoStr) dia.classList.add('selected');
       dia.onclick = () => selecionarDia(isoStr, dia);
     }
-
     grid.appendChild(dia);
   }
 }
 
 function mudarMes(dir) {
   mesAtual.setMonth(mesAtual.getMonth() + dir);
-  dataSelecionada = null;
-  horarioSelecionado = null;
+  dataSelecionada = null; horarioSelecionado = null;
   document.getElementById('btn-confirmar').disabled = true;
   document.getElementById('slots-area').innerHTML = '';
   renderCalendario();
 }
 
 async function selecionarDia(iso, el) {
-  dataSelecionada = iso;
-  horarioSelecionado = null;
+  dataSelecionada = iso; horarioSelecionado = null;
   document.getElementById('btn-confirmar').disabled = true;
-
   document.querySelectorAll('.cal-day.selected').forEach(e => e.classList.remove('selected'));
   el.classList.add('selected');
-
   const area = document.getElementById('slots-area');
-  area.innerHTML = '<div class="slot-loading">Buscando horários disponíveis...</div>';
-
+  area.innerHTML = '<div class="slot-loading">Buscando horários...</div>';
   try {
-    const res  = await fetch(`/api/horarios?data=${iso}`);
+    const res = await fetch('/api/horarios?data=' + iso);
     const json = await res.json();
-
-    if (!json.slots || json.slots.length === 0) {
-      area.innerHTML = '<div class="slot-loading">Nenhum horário disponível neste dia.</div>';
-      return;
-    }
-
-    area.innerHTML = `<div class="slots-title">Horários disponíveis em ${formatarData(iso)}</div><div class="slots-grid" id="slots-grid"></div>`;
-    const grid = document.getElementById('slots-grid');
-
+    if (!json.slots || json.slots.length === 0) { area.innerHTML = '<div class="slot-loading">Sem horários disponíveis neste dia.</div>'; return; }
+    area.innerHTML = '<div class="slots-title">Horários disponíveis</div><div class="slots-grid" id="slots-grid"></div>';
     json.slots.forEach(s => {
-      const btn = document.createElement('div');
-      btn.className = 'slot';
-      btn.textContent = s.hora;
-      btn.dataset.iso = s.iso;
+      const btn = document.createElement('div'); btn.className = 'slot'; btn.textContent = s.hora; btn.dataset.iso = s.iso;
       btn.onclick = () => selecionarHorario(s.iso, btn);
-      grid.appendChild(btn);
+      document.getElementById('slots-grid').appendChild(btn);
     });
-  } catch {
-    area.innerHTML = '<div class="slot-loading">Erro ao carregar horários.</div>';
-  }
+  } catch { area.innerHTML = '<div class="slot-loading">Erro ao carregar horários.</div>'; }
 }
 
 function selecionarHorario(iso, el) {
@@ -356,49 +301,27 @@ function selecionarHorario(iso, el) {
 
 async function confirmarAgendamento() {
   const btn = document.getElementById('btn-confirmar');
-  btn.disabled = true;
-  btn.textContent = 'Aguarde...';
-
+  btn.disabled = true; btn.textContent = 'Aguarde...';
   const body = {
-    nome:       document.getElementById('nome').value.trim(),
-    empresa:    document.getElementById('empresa').value.trim(),
-    whatsapp:   document.getElementById('whatsapp').value.trim(),
-    faturamento:document.getElementById('faturamento').value,
-    dor:        document.getElementById('dor').value.trim(),
+    nome: document.getElementById('nome').value.trim(),
+    empresa: area,
+    whatsapp: document.getElementById('whatsapp').value.trim(),
+    faturamento: faturamento,
+    dor: 'Área: ' + area + ' | Horas perdidas: ' + horas,
     horarioISO: horarioSelecionado
   };
-
   try {
-    const res = await fetch('/api/agendar', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
-    });
+    const res = await fetch('/api/agendar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
     const json = await res.json();
-
     if (json.ok) {
       document.getElementById('calendar-card').style.display = 'none';
-      document.getElementById('success-card').style.display  = 'block';
+      document.getElementById('success-card').style.display = 'block';
       document.getElementById('success-nome').textContent = body.nome.split(' ')[0];
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      alert('Erro ao agendar. Tenta novamente.');
-      btn.disabled = false;
-      btn.textContent = 'Confirmar agendamento';
-    }
-  } catch {
-    alert('Erro de conexão. Tenta novamente.');
-    btn.disabled = false;
-    btn.textContent = 'Confirmar agendamento';
-  }
+    } else { alert('Erro ao agendar. Tenta novamente.'); btn.disabled = false; btn.textContent = 'Confirmar agendamento'; }
+  } catch { alert('Erro de conexão.'); btn.disabled = false; btn.textContent = 'Confirmar agendamento'; }
 }
 
-function formatarData(iso) {
-  const [a,m,d] = iso.split('-');
-  return `${d}/${m}/${a}`;
-}
-
-// Init
 renderCalendario();
 </script>
 </body>
