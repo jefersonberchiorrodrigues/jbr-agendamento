@@ -65,21 +65,15 @@ app.get('/api/horarios', async (req, res) => {
       fim:    new Date(e.end.dateTime   || e.end.date)
     }));
 
-    // Gera slots de 60 min entre 08h e 19h
+    const diaSemana = new Date(data + 'T12:00:00-03:00').getDay();
+    if (diaSemana === 0 || diaSemana === 6) return res.json({ slots: [] });
+    const horariosFixos = [10, 11, 16, 17];
     const slots = [];
-    let hora = new Date(inicio);
-    while (hora < fim) {
+    for (const h of horariosFixos) {
+      const hora    = new Date(data + `T${String(h).padStart(2,'0')}:00:00-03:00`);
       const proxima = new Date(hora.getTime() + 60 * 60 * 1000);
-      const livre = !ocupados.some(o =>
-        hora < o.fim && proxima > o.inicio
-      );
-      if (livre) {
-        slots.push({
-          hora: hora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' }),
-          iso:  hora.toISOString()
-        });
-      }
-      hora = proxima;
+      const livre = !ocupados.some(o => hora < o.fim && proxima > o.inicio);
+      if (livre) slots.push({ hora: hora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' }), iso: hora.toISOString() });
     }
 
     res.json({ slots });
